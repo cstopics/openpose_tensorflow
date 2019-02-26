@@ -61,12 +61,6 @@ while cv2.waitKey(1) < 0:
     output = np.swapaxes(output,1,3)
     output = np.swapaxes(output,2,3)
 
-    print('')
-    print('AAA')
-    print(output.shape)
-    print('AAA')
-    print('')
-
     H = output.shape[2]
     W = output.shape[3]
     # Empty list to store the detected keypoints
@@ -78,12 +72,10 @@ while cv2.waitKey(1) < 0:
 
         # Find global maxima of the probMap.
         minVal, prob, minLoc, point = cv2.minMaxLoc(probMap)
-        print('point', point)
         
         # Scale the point to fit on the original image
         x = (frameWidth * point[0]) / W
         y = (frameHeight * point[1]) / H
-        print('x,y',x,',',y)
 
         if prob > threshold : 
             cv2.circle(frameCopy, (int(x), int(y)), 8, (0, 255, 255), thickness=-1, lineType=cv2.FILLED)

@@ -1,6 +1,8 @@
 Do not forget to visit our web page: https://cstopics.github.io/cstopics/
 
-# pose_extraction_rgbd
+# Pose Extraction RGB
+
+This repository uses the [OpenpPose](CMU-Perceptual-Computing-Lab) MPI model from the CMU Perceptual Computing Lab, and uses the [caffe-tensorflow](https://github.com/linkfluence/caffe-tensorflow) converter to conver the network from Caffe to Tensorflow.
 
 ## Dependencies
 
@@ -22,10 +24,32 @@ $ wget -O pose.caffemodel http://posefs1.perception.cs.cmu.edu/OpenPose/models/p
 $ cd ..
 ```
 
-Clone the model converter, and use it (it must be executed with Python 2.7, anaconda 2 is recommended):
+Clone the model converter, and use it (it must be executed with Python 2.7, Anaconda 2 is recommended):
 
 ``` bash
 $ cd model/
-$ git clone https://github.com/linkfluence/caffe-tensorflow
-$ 
+$ python caffe-tensorflow/convert.py pose.prototxt --caffemodel pose.caffemodel --standalone-output-path pose.pb
+$ cd ..
 ```
+
+## Testing the network
+
+With Anaconda 3 again.
+
+* Test with the sample photo:
+
+``` bash
+$ python testPhoto.py
+```
+
+When photo appears, press any key to exit.
+
+* Test with the sample video:
+
+``` bash
+$ python testVideo.py
+```
+
+While the video is playing, press any key to exit.
+
+### Thanks!

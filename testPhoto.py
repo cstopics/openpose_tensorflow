@@ -55,7 +55,6 @@ output = sess.run(net_output, feed_dict={ net_input: inpBlob })
 output = np.swapaxes(output,1,3)
 output = np.swapaxes(output,2,3)
 
-print(output.shape)
 print("time taken by network : {:.3f}".format(time.time() - t))
 
 H = output.shape[2]
@@ -70,13 +69,10 @@ for i in range(nPoints):
 
     # Find global maxima of the probMap.
     minVal, prob, minLoc, point = cv2.minMaxLoc(probMap)
-    #print('point', point)
     
     # Scale the point to fit on the original image
     x = (frameWidth * point[0]) / W
     y = (frameHeight * point[1]) / H
-    print(frameCopy[int(y)][int(x)])
-    print('x,y',x,',',y)
 
     if prob > threshold : 
         cv2.circle(frameCopy, (int(x), int(y)), 8, (0, 255, 255), thickness=-1, lineType=cv2.FILLED)
