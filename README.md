@@ -17,6 +17,15 @@ $ pip install opencv-python
 Download the model:
 
 ``` bash
-$ cd model
+$ cd model/
 $ wget -O pose.caffemodel http://posefs1.perception.cs.cmu.edu/OpenPose/models/pose/mpi/pose_iter_160000.caffemodel
+$ cd ..
+```
+
+Clone the model converter, and use it (it must be executed with Python 2.7, anaconda 2 is recommended):
+
+``` bash
+$ cd model/
+$ git clone https://github.com/linkfluence/caffe-tensorflow
+$ 
 ```
