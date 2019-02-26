@@ -2,7 +2,7 @@ Do not forget to visit our web page: https://cstopics.github.io/cstopics/
 
 # Pose Extraction RGB
 
-This repository uses the [OpenpPose](CMU-Perceptual-Computing-Lab) MPI model from the CMU Perceptual Computing Lab, and uses the [caffe-tensorflow](https://github.com/linkfluence/caffe-tensorflow) converter to conver the network from Caffe to Tensorflow.
+This repository uses the [OpenpPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) MPI model from the CMU Perceptual Computing Lab, and uses the [caffe-tensorflow](https://github.com/linkfluence/caffe-tensorflow) converter to conver the network from Caffe to Tensorflow.
 
 ## Dependencies
 
