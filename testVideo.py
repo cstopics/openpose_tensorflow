@@ -11,8 +11,9 @@ nPoints = 15
 POSE_PAIRS = [[0,1], [1,2], [2,3], [3,4], [1,5], [5,6], [6,7], [1,14], [14,8], [8,9], [9,10], [14,11], [11,12], [12,13] ]
 
 
-input_source = "samples/sample_video.mp4"
+input_source = "samples/05_0000_RGB.mp4"
 cap = cv2.VideoCapture(input_source)
+#cap = cv2.VideoCapture(0)
 hasFrame, frame = cap.read()
 
 def load_graph(frozen_graph_filename):
